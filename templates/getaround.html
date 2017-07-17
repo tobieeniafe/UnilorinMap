@@ -1,0 +1,46 @@
+<p></p>
+<style type="text/css">
+    #link , iframe{
+        width: 100%;
+        height: 90%;
+    }
+</style>
+
+
+<div ng-controller="formCtrl as form">
+
+    <form  name="userForm">
+
+        <div class="row">
+            <div class="col-md-2 col-sm-12">        
+                <label>From:</label>
+                <select name="origin" class="form-control" ng-model='origin' required>
+                    <option ng-repeat="place in form.places" value="{{place.id}}">{{place.name}}</option>
+                </select>
+            </div>
+            <div class="col-md-2 col-sm-12">
+                <label>To:</label>
+                <select name="destination" class="form-control" ng-model='destination' required>
+                    <option ng-repeat="place in form.places" value="{{place.id}}">{{place.name}}</option>
+                </select>
+            </div>
+            <div class="col-md-2 col-sm-12">
+                <label>To:</label>
+                <select name="mode" class="form-control" ng-model='mode' required>
+                    <option ng-repeat="mode in form.mode" value="{{mode.value}}">{{mode.name}}  <!-- {{mode.icon}} --></option>
+                </select>
+            </div>
+            <div class="col-md-1 col-sm-4" style="padding-top: 2.5%">
+                <button type="submit" class="btn" ng-click="formsubmit(userForm.$valid)"  ng-disabled="userForm.$invalid">Search </button>
+            </div>
+        </div>
+        
+    </form>
+            <!-- <div ng-model="data">
+                
+            </div> -->
+            <!-- <input type="text" ng-model="result" name="link" id="link"> -->
+            
+            <div id="link" ng-bind-html="renderHtml(result)"></div>
+            
+</div>

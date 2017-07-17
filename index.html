@@ -1,0 +1,88 @@
+<title>UnilorinMap</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=devidev-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<link rel="stylesheet" type="text/css"  href= "css/bootstrap.min.css">
+<link rel="stylesheet" type="text/css"  href= "css/materialize.css">
+<link rel="stylesheet" type="text/css" href="css/font-awesome.min.css">
+<link rel="stylesheet" type="text/css"  href= "css/style.css">
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+
+<script src='js/jquery.js'></script>
+<script src='js/bootstrap.min.js'></script>
+<script src='js/materialize.min.js'></script>
+<script src="js/angular.min.js"></script>
+<script src="js/angular-route.min.js"></script>
+
+<script src='js/script.js'></script>
+<script src='js/map.js'></script>
+<script src='js/app.js'></script>
+
+
+<style> 
+
+  .view{
+    height: 87%;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+  }
+
+  .material-icons{
+    font-size: 1.2em;
+  }
+
+</style>
+
+
+<div id="wrapper" ng-app='unilorinMap'>
+
+  <!-- Sidebar -->
+  <div id="sidebar-wrapper">
+
+    <div class="userdetails">
+      <img src="images/avatar.png" class="circle" width="64" height="64">
+      <p> Welcome Guest</p>
+      <p>guest@unilorinmap.com</p>
+    </div>
+
+    <ul class="sidebar-nav">
+
+      <li><a href="#dashboard" id="dashboard">Dashboard <i class="material-icons">&#xE55B;</i></a></li>
+
+      <li><a href="#findme" id="findme">Find Me <i class="material-icons">&#xE55C;</i></a></li>
+
+      <li><a href="#getaround" id="getaround">Get Around <i class="material-icons">&#xE536;</i></a></li>
+
+      <li><a href="#settings" id="settings">Settings <i class="material-icons">&#xE8B8;</i></a></li>
+
+    </ul>
+  </div>
+  <!-- /#sidebar-wrapper -->
+
+  <!-- Page Content -->
+  <div id="page-content-wrapper">
+    <div class="container-fluid">
+      <a href="#menu-toggle" class="btn-floating btn waves-effect waves-light" id="menu-toggle" style="background-color: #29434e"><i class="material-icons">&#xE5D2;</i></a>
+      <br>
+      <div class="view" ng-view='' id="view"></div>
+    </div>
+  </div>
+  <!-- /#page-content-wrapper -->
+
+</div>
+<!-- /#wrapper -->
+
+
+<script>
+  $("#menu-toggle").click(function(e) {
+    e.preventDefault();
+    $("#wrapper").toggleClass("toggled");
+    
+  });
+</script>
+
+
+
+
