@@ -80,7 +80,7 @@ function initMap() {
               // Browser doesn't support Geolocation
               handleLocationError(false, infoWindow, map.getCenter());
             }
-      }   
+      }
       getLocation();     
 }
 
@@ -91,5 +91,3 @@ function initMap() {
                               'Error: The Geolocation service failed.' :
                               'Error: Your browser doesn\'t support geolocation.');
       }
-
-
